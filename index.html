@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crypto Price Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <h1>Predykcja ceny kryptowaluty</h1>
+    <form method="POST" action="/">
+        <label for="coin_id">Wybierz kryptowalutę:</label>
+        <select name="coin_id" id="coin_id">
+            {% for coin_id, symbol in coins.items() %}
+                <option value="{{ coin_id }}">{{ coin_id.capitalize() }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Przewiduj cenę</button>
+    </form>
+</body>
+</html>

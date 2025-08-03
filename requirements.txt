@@ -1,0 +1,14 @@
+ccxt
+pandas
+numpy
+tensorflow
+ta
+requests
+transformers
+torch
+python-telegram-bot
+fredapi
+scikit-learn
+flask
+coingecko-sdk
+twikit

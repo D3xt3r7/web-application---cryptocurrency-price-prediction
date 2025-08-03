@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Wyniki predykcji</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <h1>Wyniki dla {{ coin_id.capitalize() }} ({{ symbol }})</h1>
+    <p>Cena aktualna: {{ current_price|round(2) }}</p>
+    <p>Predykcja ceny: {{ pred_price|round(2) }}</p>
+    <p>MAE: {{ mae|round(2) }}</p>
+    <p>RMSE: {{ rmse|round(2) }}</p>
+    <p>Bieżący RSI: {{ rsi|round(2) }}</p>
+    <p>Bieżący ATR: {{ atr|round(2) }}</p>
+    <canvas id="priceChart"></canvas>
+    <canvas id="rsiChart"></canvas>
+    <canvas id="atrChart"></canvas>
+    <script>
+        new Chart(document.getElementById('priceChart'), {{ chart_config_price|tojson }});
+        new Chart(document.getElementById('rsiChart'), {{ chart_config_rsi|tojson }});
+        new Chart(document.getElementById('atrChart'), {{ chart_config_atr|tojson }});
+    </script>
+</body>
+</html>
